@@ -1,6 +1,6 @@
-package com.rogelioorts.training.spring.ddd.repositories.entities;
+package com.rogelioorts.training.spring.ddd.entities;
 
-import com.rogelioorts.training.spring.ddd.repositories.value.objects.CensoringLevel;
+import com.rogelioorts.training.spring.ddd.value.objects.CensoringLevel;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

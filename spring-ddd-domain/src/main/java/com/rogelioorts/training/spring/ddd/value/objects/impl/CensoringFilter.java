@@ -1,11 +1,11 @@
-package com.rogelioorts.training.spring.ddd.repositories.value.objects.impl;
+package com.rogelioorts.training.spring.ddd.value.objects.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.rogelioorts.training.spring.ddd.repositories.entities.Movie;
-import com.rogelioorts.training.spring.ddd.repositories.value.objects.CensoringLevel;
-import com.rogelioorts.training.spring.ddd.repositories.value.objects.Filter;
+import com.rogelioorts.training.spring.ddd.entities.Movie;
+import com.rogelioorts.training.spring.ddd.value.objects.CensoringLevel;
+import com.rogelioorts.training.spring.ddd.value.objects.Filter;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

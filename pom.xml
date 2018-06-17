@@ -12,6 +12,8 @@
     <spring.version>4.3.18.RELEASE</spring.version>
     <spring.boot.version>1.5.14.RELEASE</spring.boot.version>
     <openfeign.version>1.4.4.RELEASE</openfeign.version>
+    
+    <lombok.version>1.18.0</lombok.version>
   </properties>
   
   <modules>
@@ -21,6 +23,15 @@
   	<module>spring-ddd-domain</module>
   	<module>spring-ddd-infrastructure</module>
   </modules>
+  
+  <dependencies>
+    <dependency>
+	  <groupId>org.projectlombok</groupId>
+	  <artifactId>lombok</artifactId>
+	  <version>${lombok.version}</version>
+	  <scope>provided</scope>
+    </dependency>
+  </dependencies>
   
   <dependencyManagement>
   	<dependencies>
