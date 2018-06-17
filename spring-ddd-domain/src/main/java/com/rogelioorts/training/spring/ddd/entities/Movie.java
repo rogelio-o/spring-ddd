@@ -22,7 +22,7 @@ public class Movie {
 	
 	private String streamUrl;
 	
-	private double puntuation;
+	private double punctuation;
 
 	private CensoringLevel censoringLevel;
 	
