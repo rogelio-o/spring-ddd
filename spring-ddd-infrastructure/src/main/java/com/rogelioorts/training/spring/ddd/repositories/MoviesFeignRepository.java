@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rogelioorts.training.spring.ddd.entities.PageFeignMovie;
 
-@FeignClient("${movies-server.url}")
+@FeignClient(name = "MoviesFeign", url = "${movies-server.url}")
 public interface MoviesFeignRepository {
 
 	@RequestMapping(method = RequestMethod.GET, path = "/movies")

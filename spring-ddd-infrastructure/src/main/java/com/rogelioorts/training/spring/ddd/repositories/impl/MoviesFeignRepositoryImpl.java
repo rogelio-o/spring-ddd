@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.rogelioorts.training.spring.ddd.entities.Movie;
-import com.rogelioorts.training.spring.ddd.mappers.FeignMoviesMapper;
+import com.rogelioorts.training.spring.ddd.mappers.MoviesFeignMapper;
 import com.rogelioorts.training.spring.ddd.repositories.MoviesFeignRepository;
 import com.rogelioorts.training.spring.ddd.repositories.MoviesRepository;
 
@@ -18,7 +18,7 @@ public class MoviesFeignRepositoryImpl implements MoviesRepository {
 	private MoviesFeignRepository repository;
 	
 	@Autowired
-	private FeignMoviesMapper mapper;
+	private MoviesFeignMapper mapper;
 
 	@Override
 	public List<Movie> findAll() {

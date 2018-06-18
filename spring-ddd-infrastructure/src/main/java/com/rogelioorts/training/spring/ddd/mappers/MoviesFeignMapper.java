@@ -7,7 +7,7 @@ import com.rogelioorts.training.spring.ddd.entities.Movie;
 import com.rogelioorts.training.spring.ddd.value.objects.CensoringLevel;
 
 @Component
-public class FeignMoviesMapper {
+public class MoviesFeignMapper {
 
 	public Movie map(FeignMovie in) {
 		Movie out = new Movie();
