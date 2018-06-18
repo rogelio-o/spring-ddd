@@ -4,12 +4,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.rogelioorts.training.spring.ddd.entities.Movie;
 import com.rogelioorts.training.spring.ddd.mappers.FeignMoviesMapper;
 import com.rogelioorts.training.spring.ddd.repositories.MoviesFeignRepository;
 import com.rogelioorts.training.spring.ddd.repositories.MoviesRepository;
 
+@Repository
 public class MoviesFeignRepositoryImpl implements MoviesRepository {
 	
 	@Autowired
