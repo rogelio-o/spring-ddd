@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "movies-server.url",
+  "type": "java.lang.String",
+  "description": "The base URL of the server to retrieve the movies."
+}]}

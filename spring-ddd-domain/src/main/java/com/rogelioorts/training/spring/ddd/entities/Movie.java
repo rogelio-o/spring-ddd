@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Movie {
 
 	@EqualsAndHashCode.Include
-	private String id;
+	private String movieId;
 	
 	private String title;
 	
