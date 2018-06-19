@@ -1,46 +1,31 @@
 package com.rogelioorts.training.spring.ddd.mappers;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
-import org.springframework.stereotype.Component;
-
-import com.rogelioorts.training.spring.ddd.factories.FiltersFactory;
+import com.rogelioorts.training.spring.ddd.entities.FiltersDataApi;
 import com.rogelioorts.training.spring.ddd.value.objects.CensoringLevel;
-import com.rogelioorts.training.spring.ddd.value.objects.Filter;
+import com.rogelioorts.training.spring.ddd.value.objects.impl.FiltersData;
 
-@Component
-public class FiltersApiMapper {
+@Mapper(componentModel = "spring")
+public interface FiltersApiMapper {
 
-	public List<Filter> map(List<String> rawFilters, String censoringLevel) {
-		List<Filter> filters = new ArrayList<>();
-		
-		if(rawFilters != null) {
-			for(String filterId : rawFilters) {
-				filters.add(map(filterId, censoringLevel));
-			}
-		}
-		
-		return filters;
-	}
+	@Mapping(source = "level", target = "censoringLevel")
+    FiltersData map(FiltersDataApi data);
 	
-	private Filter map(String filterId, String censoringLevel) {
-		if("censoring".equals(filterId)) {
-			return FiltersFactory.censoringFilter(mapCensoringLevel(censoringLevel));
-		} else {
-			throw new IllegalArgumentException("Not valid filter ID \"" + filterId + "\"");
-		}
-	}
-	
-	private CensoringLevel mapCensoringLevel(String censoringLevel) {
-		switch(censoringLevel) {
-			case "CENSORED":
-				return CensoringLevel.CENSORED;
-			case "UNCENSORED":
-				return CensoringLevel.UNCENSORED;
-			default: 
-				throw new IllegalArgumentException("Not valid censoring level \"" + censoringLevel + "\"");
-		}
-	}
+	default CensoringLevel map(String value) {
+        if (value == null) {
+            return null;
+        }
+
+        switch(value) {
+            case "censored":
+                return CensoringLevel.CENSORED;
+            case "uncensored":
+                return CensoringLevel.UNCENSORED;
+            default:
+            	return null;
+        }
+    }
 	
 }
